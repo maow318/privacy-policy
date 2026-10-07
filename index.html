@@ -1,30 +1,167 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>隐私政策</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIMHub 隐私政策 / Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1d1d1f; --muted:#6e6e73; --bg:#ffffff; --card:#f5f5f7; --link:#0066cc; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#f5f5f7; --muted:#a1a1a6; --bg:#000000; --card:#1c1c1e; --link:#2997ff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h2 { font-size:20px; margin:32px 0 8px; }
+  h3 { font-size:16px; margin:20px 0 6px; }
+  p, li { margin:6px 0; }
+  ul { padding-left:22px; }
+  .muted { color:var(--muted); font-size:14px; }
+  .lang { display:flex; gap:12px; margin:16px 0 24px; }
+  .lang a { color:var(--link); text-decoration:none; }
+  section.card { background:var(--card); border-radius:14px; padding:4px 18px 12px; margin:16px 0; }
+  hr { border:none; border-top:1px solid rgba(128,128,128,.25); margin:48px 0; }
+  a { color:var(--link); }
+</style>
 </head>
 <body>
-<h1>隐私政策</h1>
+<main>
 
-<p>本应用（eSIM Subscription Manager）非常重视您的隐私。本应用不会收集、存储或分享任何个人身份信息。</p>
+<h1>SIMHub 隐私政策</h1>
+<p class="muted">适用于 SIMHub iOS / iPadOS / macOS 版与 Android 版 · 最后更新：2026 年 10 月 7 日</p>
+<div class="lang"><a href="#zh">中文</a><a href="#en">English</a></div>
 
-<h2>数据收集</h2>
-<p>本应用仅在您的设备本地存储您主动输入的eSIM信息（例如EID、套餐信息、价格、到期时间等）。</p>
+<div id="zh">
+<p>SIMHub（以下简称「本应用」）是一款帮助你管理 eSIM 与实体 SIM 卡的工具。我们重视你的隐私：<strong>本应用没有服务器、不需要注册账号、不含广告和统计 SDK，不会收集、出售或共享你的个人信息。</strong>下面说明本应用会接触哪些数据、为什么、以及数据去向。</p>
 
-<h2>数据存储</h2>
-<p>所有数据默认存储在您的设备本地。如您启用iCloud同步功能，数据将通过Apple iCloud进行同步。本应用不会访问或存储您的iCloud数据。</p>
+<h2>1. 你输入的卡片信息</h2>
+<ul>
+  <li>你添加的卡片资料（运营商、号码、套餐、国家/地区、到期日、价格、备注、标签、绑定的 App 账号名称等）只保存在你的设备本地。</li>
+  <li><strong>iOS / macOS：</strong>如果你开启 iCloud 同步，这些资料会通过你自己的 Apple iCloud 账号在你的设备之间同步，由 Apple 按其隐私政策处理；我们无法访问你的 iCloud 数据。</li>
+  <li>导出 / 备份文件只会保存到你自己选择的位置。</li>
+</ul>
 
-<h2>第三方共享</h2>
-<p>本应用不会向任何第三方出售、出租或共享您的个人信息。</p>
+<h2>2. 读卡器与 SIM 卡数据</h2>
+<p>当你主动连接 USB 智能卡读卡器（iOS 版还支持蓝牙读卡器）时，本应用会读取卡上的 EID、Profile 列表（ICCID、运营商名、昵称）、可用空间，以及 SIM 卡的 IMSI、ICCID、短信中心号码和本机号码。这些信息只在你的设备上显示和使用，不会上传给我们。</p>
+<ul>
+  <li><strong>下载 eSIM Profile：</strong>你输入或扫描激活码后，本应用会按 GSMA 标准把下载所需的信息（EID、设备信息、卡生成的签名数据）直接发送给激活码中指定的运营商 / eSIM 服务器（SM-DP+），完成下载后回传安装结果通知。</li>
+  <li><strong>卡内密钥：</strong>本应用不会读取、导出或上传 SIM 卡内的密钥（如 Ki / OPc），这些密钥也无法从卡中读出。鉴权运算由 SIM 卡自身完成。</li>
+</ul>
 
-<h2>相机权限</h2>
-<p>如您使用二维码扫描功能，仅用于识别eSIM二维码信息，不会保存或上传图像。</p>
+<h2>3. Wi-Fi 通话、短信与电话</h2>
+<ul>
+  <li>你开启 Wi-Fi 通话后，本应用会使用读卡器中 SIM 卡的身份（IMSI）和卡计算出的鉴权结果，经互联网直接连接该卡运营商的网络（ePDG / IMS），用于收发短信和通话。这些数据只在你的设备与你的运营商之间传输。</li>
+  <li>收到和发出的短信保存在你的设备本地。</li>
+  <li><strong>麦克风：</strong>仅在你拨打或接听 Wi-Fi 通话期间采集声音并发送给通话对方，不录音、不保存，通话结束即停止。</li>
+  <li><strong>Android：</strong>通话通过系统电话接口（Telecom）显示在系统通话界面；开启 Wi-Fi 通话期间会显示常驻通知以保持连接，可随时在通知中断开。</li>
+  <li>出于防诈骗考虑，本应用不支持拨打中国大陆号码（+86），也不支持紧急呼叫。</li>
+</ul>
 
-<h2>联系我们</h2>
-<p>如有任何隐私相关问题，请联系：your@email.com</p>
+<h2>4. 设备权限</h2>
+<ul>
+  <li><strong>相机：</strong>仅用于扫描 eSIM 二维码，不保存或上传图像。</li>
+  <li><strong>照片：</strong>仅读取你选择的图片以识别其中的二维码。</li>
+  <li><strong>日历：</strong>仅在你开启后，创建和更新保号到期提醒事件。</li>
+  <li><strong>通知：</strong>用于到期提醒、短信和来电提醒。</li>
+  <li><strong>通讯录（Android）：</strong>拨号时你可以通过系统联系人选择器挑选一个号码；本应用不会读取整个通讯录。</li>
+  <li><strong>电话状态（Android）：</strong>用于与系统通话界面配合。</li>
+  <li><strong>USB / 蓝牙：</strong>仅用于连接你的读卡器（蓝牙仅 iOS 版）。</li>
+  <li><strong>面容 ID / 触控 ID（iOS）：</strong>用于应用锁，由系统完成验证，本应用拿不到生物特征数据。</li>
+  <li><strong>本地网络（iOS / macOS）：</strong>仅在你手动开启「Web 管理」、连接你添加的局域网服务或你自己的 Mac 上的 SIMHub 时使用。</li>
+</ul>
 
-<p>最后更新日期：2026年2月</p>
+<h2>5. 联网功能与第三方服务</h2>
+<p>下列请求只在你使用相应功能时发出，本应用不会附带你的卡片资料或身份信息：</p>
+<ul>
+  <li><strong>当前网络国家</strong>：向 ipinfo.io 查询你当前公网 IP 所在国家和网络运营商。</li>
+  <li><strong>网络测速</strong>：使用 Measurement Lab（M-Lab）和 Cloudflare 测速服务；M-Lab 会按其政策匿名公开测量数据（含 IP 地址）。</li>
+  <li><strong>汇率</strong>：从 open.er-api.com 获取汇率，用于多币种换算。</li>
+  <li><strong>目的地天气</strong>：向 Open-Meteo 查询你所选城市的天气，不使用你的定位。</li>
+  <li><strong>应用图标</strong>：添加绑定服务时，按应用名称查询 Apple App Store 公开的图标。</li>
+  <li><strong>3D 地球</strong>：从公共 CDN（jsDelivr、unpkg）加载地图素材。</li>
+  <li><strong>Telegram / 邮件提醒（可选）</strong>：仅当你自己填写 Telegram Bot 或邮箱服务器信息后，本应用才会把到期提醒内容发送到你指定的 Telegram 或邮箱。这些凭据只保存在你的设备上。</li>
+</ul>
 
+<h2>6. 数据删除</h2>
+<p>所有数据都在你的设备（以及你自己的 iCloud，如已开启）中。删除卡片、在设置中清除数据或卸载本应用即可删除本地数据。</p>
+
+<h2>7. 儿童</h2>
+<p>本应用面向成年用户，不面向 13 岁以下儿童，也不会有意收集儿童的信息。</p>
+
+<h2>8. 政策变更</h2>
+<p>如本政策有更新，我们会修改本页面并更新上方日期。</p>
+
+<h2>9. 联系我们</h2>
+<p>如有任何隐私相关问题，请发邮件至：<a href="mailto:forserinforserein@gmail.com">forserinforserein@gmail.com</a></p>
+</div>
+
+<hr>
+
+<div id="en" lang="en">
+<h1>SIMHub Privacy Policy</h1>
+<p class="muted">Applies to SIMHub for iOS / iPadOS / macOS and Android · Last updated: October 7, 2026</p>
+
+<p>SIMHub ("the app") helps you manage eSIM and physical SIM cards. <strong>The app has no servers of its own, requires no account, and contains no ads or analytics SDKs. We do not collect, sell or share your personal information.</strong> This page explains what data the app touches, why, and where it goes.</p>
+
+<h2>1. Card information you enter</h2>
+<ul>
+  <li>Card details you add (carrier, number, plan, country/region, expiry date, price, notes, tags, names of linked app accounts, etc.) are stored only on your device.</li>
+  <li><strong>iOS / macOS:</strong> if you turn on iCloud sync, this data syncs between your devices through your own Apple iCloud account and is handled by Apple under its privacy policy. We cannot access your iCloud data.</li>
+  <li>Exports and backups are saved only to a location you choose.</li>
+</ul>
+
+<h2>2. Card readers and SIM data</h2>
+<p>When you connect a USB smart-card reader (Bluetooth readers are also supported on iOS), the app reads the card's EID, profile list (ICCID, provider name, nickname) and free space, and the SIM's IMSI, ICCID, SMS center and own number. This information is shown and used only on your device and is never uploaded to us.</p>
+<ul>
+  <li><strong>Downloading an eSIM profile:</strong> after you enter or scan an activation code, the app sends the information required by the GSMA standard (EID, device information and data signed by the card) directly to the carrier / eSIM server (SM-DP+) named in the activation code, and returns the installation result notification afterwards.</li>
+  <li><strong>Secret keys:</strong> the app never reads, exports or uploads secret keys on the SIM (such as Ki / OPc); they cannot be read from the card. Authentication is computed by the SIM itself.</li>
+</ul>
+
+<h2>3. Wi-Fi Calling, SMS and calls</h2>
+<ul>
+  <li>When you turn on Wi-Fi Calling, the app uses the identity (IMSI) of the SIM in your reader and the authentication result computed by the card to connect over the internet directly to that SIM's carrier network (ePDG / IMS) for SMS and calls. This data travels only between your device and your carrier.</li>
+  <li>Sent and received SMS are stored on your device.</li>
+  <li><strong>Microphone:</strong> used only during a Wi-Fi call you make or answer, to send your voice to the other party. Nothing is recorded or stored, and capture stops when the call ends.</li>
+  <li><strong>Android:</strong> calls are shown on the system call screen through the Telecom API; while Wi-Fi Calling is on, an ongoing notification keeps the connection alive and lets you disconnect at any time.</li>
+  <li>To help prevent fraud, calls to mainland China numbers (+86) are not supported. Emergency calls are not supported.</li>
+</ul>
+
+<h2>4. Device permissions</h2>
+<ul>
+  <li><strong>Camera:</strong> only for scanning eSIM QR codes; images are not saved or uploaded.</li>
+  <li><strong>Photos:</strong> only reads an image you pick, to find a QR code in it.</li>
+  <li><strong>Calendar:</strong> only when you enable it, to create and update renewal reminder events.</li>
+  <li><strong>Notifications:</strong> for renewal reminders, SMS and incoming calls.</li>
+  <li><strong>Contacts (Android):</strong> you can pick one number through the system contact picker when dialing; the app does not read your whole address book.</li>
+  <li><strong>Phone state (Android):</strong> to work with the system call screen.</li>
+  <li><strong>USB / Bluetooth:</strong> only to connect your card reader (Bluetooth on iOS only).</li>
+  <li><strong>Face ID / Touch ID (iOS):</strong> for the app lock; verification is done by the system and the app never receives biometric data.</li>
+  <li><strong>Local network (iOS / macOS):</strong> only when you turn on Web management, connect to LAN services you added, or connect to SIMHub on your own Mac.</li>
+</ul>
+
+<h2>5. Online features and third-party services</h2>
+<p>These requests are made only when you use the related feature, and never include your card data or identity:</p>
+<ul>
+  <li><strong>Current network country:</strong> queries ipinfo.io for the country and network of your current public IP address.</li>
+  <li><strong>Speed test:</strong> uses Measurement Lab (M-Lab) and Cloudflare; M-Lab publishes measurement data (including IP address) anonymously under its own policy.</li>
+  <li><strong>Exchange rates:</strong> fetched from open.er-api.com for currency conversion.</li>
+  <li><strong>Destination weather:</strong> queries Open-Meteo for a city you choose; your location is not used.</li>
+  <li><strong>App icons:</strong> when you add a linked service, looks up its public icon on the Apple App Store by app name.</li>
+  <li><strong>3D globe:</strong> loads map assets from public CDNs (jsDelivr, unpkg).</li>
+  <li><strong>Telegram / email reminders (optional):</strong> only after you enter your own Telegram bot or mail server details does the app send renewal reminders to the Telegram chat or mailbox you specify. These credentials stay on your device.</li>
+</ul>
+
+<h2>6. Deleting data</h2>
+<p>All data lives on your device (and in your own iCloud, if enabled). Delete cards, clear data in settings, or uninstall the app to remove local data.</p>
+
+<h2>7. Children</h2>
+<p>The app is intended for adults and is not directed to children under 13. We do not knowingly collect information from children.</p>
+
+<h2>8. Changes</h2>
+<p>If this policy changes, we will update this page and the date above.</p>
+
+<h2>9. Contact</h2>
+<p>For any privacy questions, email <a href="mailto:forserinforserein@gmail.com">forserinforserein@gmail.com</a>.</p>
+</div>
+
+</main>
 </body>
 </html>
